@@ -79,6 +79,12 @@ export class cardpelis extends LitElement {
             font-size: 14px;
             font-weight: 700;
         }
+        img {
+            max-width:50%;
+            max-height:50%;
+            height:15em;
+            border-radius:1em;
+        }
     `;
     scucha(){
         const inpo = document.querySelector("#name")
@@ -87,7 +93,7 @@ export class cardpelis extends LitElement {
     }
     render() {
         const pelis = this.basePelis
-        console.log(pelis);
+
         
         return html`
         ${pelis.map(peli=> html`
@@ -99,7 +105,7 @@ export class cardpelis extends LitElement {
                         </div>
                         <i class='bx bx-trending-up icon' ></i>
                     </div>
-                    <span class="progress" data-value="40%"></span>
+                    <img src="${peli["#IMG_POSTER"]}" alt="${peli["#TITLE"]}">
                     <span class="label">${peli["#RANK"]}</span>
                 </div>
             `)}
