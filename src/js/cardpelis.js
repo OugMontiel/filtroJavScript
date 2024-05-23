@@ -3,18 +3,18 @@ import { getBusqueda } from './get';
 
 export class cardpelis extends LitElement {
     static properties = { //Se cargan las variables
-        pelis: { type: Array },
+        basePelis: { type: Array },
         buscar:{ type: String },
     }
     constructor() {
         super();
         this.buscar="Niram"
-        this.pelis = []
+        this.basePelis = []
         this.loadPelis();
     }
     async loadPelis() {
         try {
-            this.pelis = await getBusqueda(this.buscar);
+            this.basePelis = await getBusqueda("Niram");
             this.requestUpdate();
         } catch (error) {
             console.error('Error loading pelis:', error);
@@ -22,19 +22,24 @@ export class cardpelis extends LitElement {
     }
     static styles = css`^`;
     render() {
-        const peli = this.pelis.description
+        const pelis = this.basePelis
+        console.log(pelis[1]["#ACTORS"]); 
+        const YEAR = pelis[1]["#YEAR"]; 
+        const TITLE = pelis[1]["#TITLE"]; 
+        const RANK = pelis[1]["#RANK"]; 
+        
         return html`
-            ${peli.map(film=> html`
+            ${pelis.map(peli=> html`
                 <div class="card">
                     <div class="head">
                         <div>
-                            <h2>${film.YEAR}</h2>
-                            <p>${film.TITLE}</p>
+                            <h2>${YEAR}</h2>
+                            <p>${TITLE}</p>
                         </div>
                         <i class='bx bx-trending-up icon' ></i>
                     </div>
                     <span class="progress" data-value="40%"></span>
-                    <span class="label">${film.RANK}</span>
+                    <span class="label">${RANK}</span>
                 </div>
             `)}
         `
