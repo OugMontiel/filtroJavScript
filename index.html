@@ -17,12 +17,11 @@
 			<li><a href="#" class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
 			<li class="divider" data-text="main">Main</li>
 			<li>
-				<a href="#"><i class='bx bxs-inbox icon' ></i> Elements <i class='bx bx-chevron-right icon-right' ></i></a>
+				<a href="#"><i class='bx bxs-inbox icon' ></i> Filtros <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
-					<li><a href="#">Alert</a></li>
-					<li><a href="#">Badges</a></li>
-					<li><a href="#">Breadcrumbs</a></li>
-					<li><a href="#">Button</a></li>
+					<li><a href="#">por año de lanzamiento</a></li>
+					<li><a href="#">por actor</a></li>
+					<li><a href="#">por ranking</a></li>
 				</ul>
 			</li>
 			<li><a href="#"><i class='bx bxs-chart icon' ></i> Charts</a></li>
@@ -47,9 +46,7 @@
 		<!-- NAVBAR -->
 		<nav>
 			<i class='bx bx-menu toggle-sidebar' ></i>
-			<form action="#">
-				
-			</form>
+			<input type="text" id="name" name="name" required>
 			
 			<span class="divider"></span>
 			<div class="profile">
@@ -72,6 +69,7 @@
 				<li><a href="#" class="active">Dashboard</a></li>
 			</ul>
 			<div class="info-data">
+				<card-pelis></card-pelis>
 				<div class="card">
 					<div class="head">
 						<div>

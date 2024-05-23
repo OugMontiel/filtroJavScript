@@ -1,6 +1,5 @@
+import { cardpelis } from "./cardpelis.js";
 import { getBusqueda } from "./get.js";
 
 
-
-
-console.log(await getBusqueda("Niram"));
+customElements.define("card-pelis",cardpelis)
